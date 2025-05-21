@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { generateJWT } from "../lib/utils.js";
+import cloudinary from "../lib/cloudinary.js";
 
 export const signup = async (req, res) => {
   const { fullName, email, password } = req.body;
@@ -41,7 +42,7 @@ export const signup = async (req, res) => {
       res.status(400).json({ message: "Invalid user data" });
     }
   } catch (err) {
-    console.log("error in signup controller", error.message);
+    console.log("error in signup controller", err.message);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };

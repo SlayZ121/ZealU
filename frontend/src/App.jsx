@@ -1,4 +1,4 @@
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar.jsx";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SettingsPage from "./pages/SettingsPage";
@@ -17,8 +17,6 @@ const App = () => {
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
-
-  console.log(authUser);
 
   if (isCheckingAuth && !authUser)
     return (
