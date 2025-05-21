@@ -16,7 +16,6 @@ export const THEMES = [
   "lofi",
   "pastel",
   "fantasy",
-  "wireframe",
   "black",
   "luxury",
   "dracula",
@@ -31,4 +30,5 @@ export const THEMES = [
   "dim",
   "nord",
   "sunset",
+  "caramellatte",
 ];
