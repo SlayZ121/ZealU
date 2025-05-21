@@ -39,10 +39,7 @@ const Navbar = () => {
                   <User className="size-5" />
                   <span className="hidden sm:inline">Profile</span>
                 </Link>
-                <button
-                  onClick={logout}
-                  className="btn btn-sm gap-2 text-white bg-blue-900 hover:bg-blue-800 transition-colors duration-200"
-                >
+                <button className="flex gap-2 items-center" onClick={logout}>
                   <LogOut className="size-5" />
                   <span className="hidden sm:inline">Logout</span>
                 </button>

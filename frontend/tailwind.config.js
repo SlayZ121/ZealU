@@ -11,7 +11,7 @@ export default {
     themes: [
       "light",
       "dark",
-      "cupcake",
+       "cupcake",
       "bumblebee",
       "emerald",
       "corporate",
