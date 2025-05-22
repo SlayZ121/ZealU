@@ -5,12 +5,13 @@ import cors from "cors";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import { connectDB } from "./lib/db.js";
+import { app, server } from "./lib/socket.js";
 
 dotenv.config();
-const app = express();
 
 const PORT = process.env.PORT;
-app.use(express.json()); //to extract json data.
+app.use(express.json({ limit: "10mb" }));
+//to extract json data.
 app.use(cookieParser());
 app.use(
   cors({
@@ -19,10 +20,9 @@ app.use(
   })
 );
 app.use("/api/auth", authRoutes);
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
   connectDB();
 });
-
